@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LLM Chatbot</title>
+</head>
+<body>
+    <h2>Chat with Your Local LLM</h2>
+    <textarea id="prompt" rows="4" cols="60" placeholder="Type something..."></textarea><br>
+    <button onclick="sendPrompt()">Generate</button>
+    <h3>Response:</h3>
+    <pre id="response"></pre>
+
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById("prompt").value;
+            const res = await fetch("http://127.0.0.1:8000/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ prompt: prompt })
+            });
+            const data = await res.json();
+            document.getElementById("response").textContent = data.response;
+        }
+    </script>
+</body>
+</html>
