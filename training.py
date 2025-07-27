@@ -16,10 +16,10 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 batch_size = 16
 # args.batch_size
-block_size = 128 #maximum context lenght for rpediction
-max_iters = 5000
+block_size = 256 #maximum context lenght for rpediction
+max_iters = 2000
 learning_rate = 3e-4
-eval_iters = 200
+eval_iters = 100
 n_embd = 384
 n_layer = 6
 n_head = 8
@@ -223,6 +223,7 @@ if __name__ == "__main__":
             losses = estimate_loss()
             print(f"step: {iter}, train loss: {losses['train']:.4f}, val loss: {losses['val']:.4f}")
             
+            
         
         xb, yb = get_batch('train')
 
@@ -231,7 +232,7 @@ if __name__ == "__main__":
         loss.backward()
         optimizer.step()
 
-        if iter % eval_iters*5 == 0:
+        if (iter % (eval_iters*5)) == 0:
             checkpoint = {
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
@@ -248,6 +249,7 @@ if __name__ == "__main__":
             torch.save(checkpoint, 'checkpoint.pth')
             print(f'checkpoint saved at step: {iter}')
             print(loss.item())
+            
 
 
 
