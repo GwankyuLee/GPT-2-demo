@@ -5,4 +5,6 @@ openwebtext/
 .train_split.txt
 openwebtextDATA/*.txt
 *.pth
-
+openwebtextDATA/spm_model.model
+openwebtextDATA/spm_model.vocab
+index.html

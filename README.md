@@ -5,3 +5,10 @@ This is a project desgined to be capable of multilingual chat interaction betwee
 used BPE instead of unigram LM tokenization algorithm due to my personal choices, although unigram is better for multuiilingual works, BPE is faster, and is more suitable in my current condition of my personal computer, Chat gpt also used BPE algorithm
 
 and unigram can cause quite not great prediction of what comes next,
+
+
+the training of model is not complete, so it will generate giberrish but will retain the form of a sentence.
+
+you can run with given prompt by running python server.py
+
+will add html UI so user can interact with local LLM using api, 

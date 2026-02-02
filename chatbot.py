@@ -8,7 +8,7 @@ model.load_state_dict(checkpoint["model_state_dict"])
 model.to(device)
 model.eval()
 
-def generate_text(prompt, max_new_tokens=128):
+def generate_text(prompt, max_new_tokens=256):
     # Encode input string to tensor
     input_ids = torch.tensor([encode(prompt)], dtype=torch.long).to(device)
 
@@ -19,4 +19,4 @@ def generate_text(prompt, max_new_tokens=128):
     return generated
 
 
-print('\n' + generate_text("hello"))
+print('\n' + generate_text("yo what's up, now your name is chatbot"))
