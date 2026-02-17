@@ -8,7 +8,7 @@ model.load_state_dict(checkpoint["model_state_dict"])
 model.to(device)
 model.eval()
 
-def generate_text(prompt, max_new_tokens=256):
+def generate_text(prompt, max_new_tokens=512):
     # Encode input string to tensor
     input_ids = torch.tensor([encode(prompt)], dtype=torch.long).to(device)
 

@@ -8,3 +8,6 @@ openwebtextDATA/*.txt
 openwebtextDATA/spm_model.model
 openwebtextDATA/spm_model.vocab
 index.html
+test.py
+index.html
+server.py

@@ -22,13 +22,18 @@ demo folder contains prototype code experimented with jupyter notebook
 
 tokenizer_train.py contains code for traniing settigns
 
+my model:
 current train loss is at 1.6054, and val loss of 1.6489
-
 and has gone through 3500 iterations of trainig
 loss.item has value of 1.509182333946228
+output: given a prompt, generates nonsense. but correctly has a structure of a sentence/paragraph.
 
-each time you run python .\training.py , it will train the model 1000 iterations saving every 500 iterations into checkpoint.pth.
+
 
 
 # instructions
 
+after training the model by running `python training.py`
+each time you run python .\training.py , it will train the model 1000 iterations saving every 500 iterations into checkpoint.pth.
+run `python chatbot.py`
+you can change prompt as you like.
