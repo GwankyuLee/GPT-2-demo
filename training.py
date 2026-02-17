@@ -17,7 +17,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 batch_size = 16
 # args.batch_size
 block_size = 256 #maximum context lenght for rpediction
-max_iters = 2000
+max_iters = 1000
 learning_rate = 3e-4
 eval_iters = 100
 n_embd = 384
@@ -34,7 +34,7 @@ with open('openwebtextDATA/vocab.txt', 'r', encoding='utf-8') as f:
     chars = sorted(list(set(text)))
 
 vocab_size = len(chars)
-#one fo many other tokenize/encoder google use sentencepice/tiktoken gfor chatgpt
+#one of many other tokenize/encoder ex.google use sentencepice/chatgpt use tiktoken
 string_to_int = {ch:i for i,ch in enumerate(chars)}
 int_to_string = {i:ch for i,ch in enumerate(chars)}
 encode = lambda s: [string_to_int[c] for c in s]
